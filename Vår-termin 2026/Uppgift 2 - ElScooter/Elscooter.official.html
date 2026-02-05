@@ -6,5 +6,36 @@
 </head>
 <body>
     <h1>Hyr en ElScooter</h1>
-    <h2>Välkommen Tage!</h2>
+    <h2>Välkommen, Tage!</h2>
 
+
+    <div id="elscooterStatus" class="status">Ingen elscooter hyrd</div>
+
+    <button id="hyrKnapp">Hyr elscooter</button>
+    <button id="lamnaTillbakaKnapp">Lämna tillbaka</button>
+    
+    <div id="uthyrningsHistorik"></div>
+
+    <script>
+        const parametrar = new URLSearchParams(window.location.search);
+        const anvandarnamn = parametrar.get("anvandarnamn");
+        const hyrKnapp = document.getElementById("hyrKnapp");
+        const lamnaTillbakaKnapp = document.getElementById("lamnaTillbakaKnapp");
+        const elscooterStatus = document.getElementById("elscooterStatus");
+        const uthyrningsHistorik = document.getElementById("uthyrningsHistorik");
+
+        let uthyrningsStartTid = null;
+
+        lamnaTillbakaKnapp.style.display = "none";
+
+        hyrKnapp.addEventListener("click", function () {
+            uthyrningsStartTid = new Date();
+
+            elscooterStatus.innerText = "Elscooter är hyrd";
+            elscooterStatus.classList.add("rented");
+
+            hyrKnapp.disabled = true;
+            lamnaTillbakaKnapp.style.display = "inline-block";
+        });
+
+        
