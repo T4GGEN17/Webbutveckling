@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(129, 92, 36);
+    color: white;
+}
+
+#output{
+    font-size: 30;
+}
+
+#Cookie{
+    background: none;
+    border: none;
+    padding: 0;
+    width: 1000px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 350px;
+}
+
+#Auto{
+    background-color: rgb(194, 151, 86);
+}

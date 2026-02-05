@@ -1,0 +1,84 @@
+/* * är en universal selektro, man använder den för att peka på alla element (flikar inom mappen) */
+*{
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* Flyttar H1 till vänster och Nav till höger */
+  align-items: center;          /* Centrerar dem vertikalt */ 
+}
+
+/*
+The Cild Combiantor (Barn kombinatorn) ( > ) i CSS används för att välja endast direkta barn 
+till ett element. Till exempel väljer nav > ul bara den lista (<ul>) som 
+ligger direkt inuti ett <nav>-element, inte listor som är nästlade längre in. 
+Det förhindrar att stilen av misstag påverkar inre listor.*/
+nav > ul {
+  display: inline-flex;
+  gap: 10px;
+  list-style: none; /* Tar bort punkterna */
+}
+
+/*
+  The Grouping Selector (,)
+  Den gör att du kan ändra alla saker samtidigt
+*/
+nav a, header h1 a {
+  text-decoration: none; /* Tar bort understreck */
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+/*
+Pseudoklassen :hover
+Denna regel gäller ENDAST när användarens markör svävar över elementet 'nav a'.
+*/
+/*
+En **pseudo-klass** i CSS är ett sätt att definiera stilar för ett element baserat på ett särskilt 
+tillstånd eller en interaktion, utan att behöva lägga till en extra klass i HTML-koden. Den skrivs 
+med ett kolon (:) före namnet, till exempel :hover eller :focus.
+Pseudo-klassen **:hover** används för att ändra utseendet på ett element när muspekaren förs över det. 
+Den används ofta för länkar, knappar och bilder för att skapa visuella effekter som färgändringar eller 
+skuggor när användaren hovrar med musen. Effekten försvinner när pekaren flyttas bort.
+*/
+nav a:hover {
+  color: #0b1eca; 
+  text-decoration: underline; /* Lägger till ett understreck när du har musen över länken*/
+}
+#page-index{
+    background-color: #fdd76d8c;
+    
+}
+#page-index h1{
+    font-size: 3rem;
+    text-align: right;
+    margin-right: 30px;
+}
+.page-recipe{
+    background-color: #fdd76d8c;
+    font-family: "Oswald", sans-serif;
+    border-color: #fdd76d8c;
+}
+.page-recipe , #page-index{
+    display: block;
+    margin: 20px auto;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.page-recipe ul ,
+.page-recipe ol{
+    max-width: 600px;
+    margin: 30px auto;
+    /*Centrerar listorna*/
+    padding: 20px;
+}
+.bild{
+    width: 500px;
+    height: 300px;
+}

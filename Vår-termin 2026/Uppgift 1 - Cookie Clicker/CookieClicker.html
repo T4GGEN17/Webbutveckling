@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CookieClicker.css">
+    <title>Cookie Clicker (The Real Game)</title>
+    <link rel="stylesheet" href="javascript exempel 2.css">
+</head>
+
+<body>
+    <h1>Cookie Clicker</h1>
+
+    <p id="output"></p>
+    <button id="Auto">Auto clicker!</button>
+    <button id="Cookie"><img src="Cookie.png" alt="Cookie bild"></button>
+    
+
+    <script defer>
+        let utText = 0;
+        let Autostopp=true;
+        let timerId=null;
+        const text = document.getElementById('output');
+        const Cookie = document.getElementById('Cookie');
+        const Auto = document.getElementById('Auto');
+
+            /*Cookie knapp*/
+        Cookie.addEventListener('click', function (event) {
+            utText += 1;
+            text.textContent = utText + " Cookies";
+        });
+
+            /*Auto clicker*/
+        Auto.addEventListener('click', function (event) {
+            if(Autostopp==true){
+                timerId = setInterval(function () {
+                    utText += 1;
+                    text.textContent = utText + " Cookies";
+        }
+                , 1000);
+                    Autostopp=false;
+            }
+            else if(Autostopp==false){
+                clearInterval(timerId);
+                    Autostopp=true;
+            }
+        });
+
+    </script>
+</body>
+</html>

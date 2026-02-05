@@ -1,0 +1,103 @@
+   /*Kap-1a.html*/
+		body {
+			font-family: sans-serif;
+			width: 1900px;
+ 			background-color: rgb(235, 211, 0);
+			margin: 0px;
+			line-height: 1.6;
+			text-align: center;
+		}
+		.image{
+			display:block;
+			height: 100px;
+			width: 100px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.Huddinge_station{
+			display:block;
+			height: auto;
+			width: 1000px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 450px;
+		}
+
+		.Huddinge_Skog{
+			display:block;
+			height: auto;
+			width: 1000px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 450px;
+		}
+	
+		.Text{
+			text-align: center;
+			line-height: 1,5;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-weight: 500;
+			font-size: medium;
+		}
+
+		nav{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 100;
+			line-height: 1,5;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-weight: 500;
+			margin-left: 25px;
+			font-size: medium;
+			text-decoration: none;
+			margin-left: 700px;
+		}
+
+		nav a{
+			text-decoration: none;
+		}
+		
+		header{
+			height: 10vh;
+			padding: 15px 40px;
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+		}
+		.Hero{
+			background-image: url(Flottsbro\ Camp);
+			background-size: cover;
+		}
+
+		.Specifik_h2{
+			text-align:center;
+			line-height: 1,5;
+			font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+			font-weight: 500;
+			font-size: medium;
+			text-size-adjust: 10px;
+		}
+		p{
+			font-family: "Orbitron", sans-serif;
+		}
+		li{
+			font-family: "Orbitron", sans-serif;
+		}
+		
+		/*Page1.html*/
+		.body1 {
+			font-family: sans-serif;
+			text-align: center;
+			
+ 			background-color: rgb(1, 184, 25);
+		}
+
+		.Eken_vid_Orlången{
+			display:block;
+			height: auto;
+			width: 1000px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 450px;
+		}
