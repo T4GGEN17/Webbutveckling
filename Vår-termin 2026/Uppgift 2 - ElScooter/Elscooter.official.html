@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Elscooter.css">
     <title>VHDeS.se Official</title>
 </head>
 <body>
@@ -29,9 +30,8 @@
         const startPris = 10;
         let kostnadsTimer = null;
         let totalBetalning = 0;
-
-
         let uthyrningsStartTid = null;
+        let ObetaldaSkulder = 0;
 
         lamnaTillbakaKnapp.style.display = "none";
 
@@ -44,27 +44,35 @@
             hyrKnapp.disabled = true;
             lamnaTillbakaKnapp.style.display = "inline-block";
 
-            kostnadsTimer = setInterval(function () {
-                const nu = new Date();
-                const minuter = Math.ceil((nu - uthyrningsStartTid) / 60000);
-                const kostnad = minuter * prisPerMinut;
-                    kostnadText.innerText ="Kostnad just nu: " + kostnad + " kr";
-                    }, 60000);
+            kostnadText.innerText = "Kostnad just nu: " + startPris + " kr";
+                kostnadsTimer = setInterval(function () {
+                    const nu = new Date();
+                    const minuter = Math.floor(
+            (nu - uthyrningsStartTid) / 60000
+        );
+                    const kostnad = startPris + (minuter * prisPerMinut);
+            kostnadText.innerText ="Kostnad just nu: " + kostnad + " kr";
+            }, 60000);
         });
 
         lamnaTillbakaKnapp.addEventListener("click", function () {
             const uthyrningsSlutTid = new Date();
-            const minuter = Math.ceil(
+            const minuter = Math.floor(
             (uthyrningsSlutTid - uthyrningsStartTid) / 60000
         );
-            const kostnadDennaGang = minuter * prisPerMinut;
-                totalBetalning += kostnadDennaGang;
+            const kostnadDennaGang = startPris + (minuter * prisPerMinut);
+                totalBetalning = ObetaldaSkulder + kostnadDennaGang;
+                ObetaldaSkulder = totalBetalning;
 
         uthyrningsHistorik.innerText =
-            "Du hyrde elscootern i " + minuter +
-            " minuter. Nu kostade det: " +
-            kostnadDennaGang + " kr.\n" +
-            "Totalt att betala: " + totalBetalning + " kr.";
+        "Du hyrde elscootern i " + minuter +
+        " minuter.\nStartavgift: " + startPris + " kr." +
+        "\nDenna gång kostade det: " +
+        kostnadDennaGang + " kr." +
+        "\nTidigare skuld: " +
+        (totalBetalning - kostnadDennaGang) + " kr." +
+        "\nTotalt att betala: " +
+        totalBetalning + " kr.";
 
         elscooterStatus.innerText = "Ingen elscooter hyrd";
         elscooterStatus.classList.remove("rented");

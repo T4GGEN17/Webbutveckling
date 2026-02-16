@@ -1,4 +1,53 @@
-*{
-
+/*Grund-del*/
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e90ff, #00bfff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
+/*Box runt användarnamn/lösernod*/
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/*Rubrik*/
+h1 {
+    position: absolute;
+    top: 40px;
+    color: white;
+}
+
+/*Input-fält*/
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*Knapp*/
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #187bcd;
+}
