@@ -7,14 +7,15 @@
 </head>
 <body>
     <h1>Hyr en ElScooter, hos VHDes</h1>
-    <h2>Välkommen, Tage!</h2>
+    <h2 id="ValkommstText">Välkommen, Tage!</h2>
 
-    <p id="pris">En elscooter har ett startpris på 10 kr, och därefter kostar det 5 kr/minut</p>
+    <p id="pris">En elscooter har ett startpris på 10 kr, och därefter kostar det 5 kr/minut.</p>
     <p id="elscooterStatus" class="status">Ingen elscooter hyrd</p>
     <p id="kostnadText">Kostnad: 0 kr</p>
 
     <button id="hyrKnapp">Hyr elscooter</button>
     <button id="lamnaTillbakaKnapp">Lämna tillbaka</button>
+    <button id="BetalaKnapp">Betala</button>
     
     <div id="uthyrningsHistorik"></div>
 
@@ -26,12 +27,14 @@
         const elscooterStatus = document.getElementById("elscooterStatus");
         const uthyrningsHistorik = document.getElementById("uthyrningsHistorik");
         const kostnadText = document.getElementById("kostnadText");
+        const betalaKnapp = document.getElementById("BetalaKnapp");
         const prisPerMinut = 5;
         const startPris = 10;
         let kostnadsTimer = null;
         let totalBetalning = 0;
         let uthyrningsStartTid = null;
         let ObetaldaSkulder = 0;
+        let antalScootrar = 0;
 
         lamnaTillbakaKnapp.style.display = "none";
 
@@ -81,6 +84,18 @@
         
             clearInterval(kostnadsTimer);
         kostnadText.innerText = "Kostnad: 0 kr";
+        });
+
+        betalaKnapp.addEventListener("click", function () {
+            if (ObetaldaSkulder > 0) {
+                alert("Du har betalat " + ObetaldaSkulder + " kr.");
+                    ObetaldaSkulder = 0;
+                    totalBetalning = 0;
+                    uthyrningsHistorik.innerText += "\n\nBetalning genomförd.";
+        } 
+            else {
+                alert("Du har inga skulder att betala.");
+        }
         });
     </script>
 </body>
