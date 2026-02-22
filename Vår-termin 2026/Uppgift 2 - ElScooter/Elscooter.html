@@ -33,14 +33,14 @@
             
             //Extremt enkel kontroll av användarn och lösenord!
             //Bör göras på backend istället för frontend men men ...
-            if(text == "Tage" && password == "1234"){
+            if(text == "Tage" && password == "1234"){//Om användarnamn och lösenord är rätt så sparas användarnamnet i variabeln username
                 username = text;
                 //skickar användaren med deras användarnamn till en ny sida
                 //Även detta är inte ett säkert sätt att skicka information, men men ...
                 window.location.href = `Elscooter.official.html?username=${encodeURIComponent(username)}`;
             }
-            else{
-                alert("Fel användarnamn eller lösenord!");
+            else{//Om användarnamn eller lösenord är fel så visas en alert
+                alert("Fel användarnamn eller lösenord!");//Visar en alert om användarnamn eller lösenord är fel
             }
         });
     </script>
